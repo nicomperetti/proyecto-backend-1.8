@@ -1,0 +1,19 @@
+{
+  "name": "sistema-backend-turnos-reservas",
+  "version": "4.0.0",
+  "description": "API REST de turnos y reservas con MongoDB, Mongoose, Handlebars, Socket.io, Zod y consultas avanzadas",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "mongoose": "^8.18.0",
+    "socket.io": "^4.8.1",
+    "zod": "^4.1.11"
+  }
+}

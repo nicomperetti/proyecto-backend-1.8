@@ -1,0 +1,34 @@
+<section>
+  <div class="section-heading">
+    <div>
+      <h2>Servicios</h2>
+      <p>Listado obtenido desde MongoDB mediante la arquitectura en capas.</p>
+    </div>
+    <span id="live-status" class="status-pill">Tiempo real activo</span>
+  </div>
+
+  {{#if error}}
+    <div class="alert">{{error}}</div>
+  {{/if}}
+
+  <div id="services-list" class="cards">
+    {{#each services}}
+      <article class="card" data-service-id="{{_id}}">
+        <div class="card-top">
+          <h3>{{name}}</h3>
+          {{#if available}}<span class="badge available">Disponible</span>{{else}}<span class="badge unavailable">No disponible</span>{{/if}}
+        </div>
+        <p>{{description}}</p>
+        <dl>
+          <div><dt>Duración</dt><dd>{{duration}} min</dd></div>
+          <div><dt>Precio</dt><dd>${{price}}</dd></div>
+          <div><dt>Categoría</dt><dd>{{category}}</dd></div>
+        </dl>
+      </article>
+    {{else}}
+      <p>No hay servicios registrados.</p>
+    {{/each}}
+  </div>
+
+  <div id="realtime-message" class="realtime-message" aria-live="polite"></div>
+</section>
